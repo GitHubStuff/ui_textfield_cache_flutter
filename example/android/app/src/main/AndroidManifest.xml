@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="reverse.domain.bundleSuffix">
+    package="com.icodeforyou.ui_textfield_cache_app">
    <application
-        android:label="MyAppName"
+        android:label="TextField Demo"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

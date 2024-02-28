@@ -1,6 +1,6 @@
 {
-    "name": "bundleSuffix",
-    "short_name": "bundleSuffix",
+    "name": "ui_textfield_cache_app",
+    "short_name": "ui_textfield_cache_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

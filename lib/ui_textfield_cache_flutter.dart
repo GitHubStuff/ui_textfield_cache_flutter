@@ -1,4 +1,4 @@
-library package_template;
+library ui_textfield_cache_flutter;
 
 /// A Calculator.
 class PackageTemplate {
