@@ -1,6 +1,6 @@
 name: ui_textfield_cache_flutter
-description: "A new Flutter package project."
-version: 0.0.1+1
+description: "Text field with cached items."
+version: 0.0.1+2
 home_page: http://www.icodeforyou.com
 publish_to: none # Remove this line if you wish to publish to pub.dev
 
