@@ -15,25 +15,11 @@ This Flutter project provides a robust solution for caching user input and dynam
 
 ### Installation
 
-1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/your-repository/flutter-caching-sorting-ui.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd flutter-caching-sorting-ui
-   ```
-
-3. Get the dependencies:
-   ```bash
-   flutter pub get
-   ```
-
-4. Run the project:
-   ```bash
-   flutter run
-   ```
+```yaml
+dependencies:
+  ui_textfield_cache_flutter:
+    git: https://github.com/GitHubStuff/ui_textfield_cache_flutter.git
+```
 
 ## Usage
 
@@ -49,22 +35,10 @@ This Flutter project provides a robust solution for caching user input and dynam
 - **flutter_modular**: For dependency injection and modularization of the app.
 - **ui_marquee_flutter**: To display scrolling text in UI elements.
 
-## Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Apache License. See `LICENSE.txt` for more information.
 
-## Acknowledgments
+## Finally
 
-- Flutter Team for providing an excellent framework for mobile development.
-- The Hive community for their efficient local storage solution.
-- And every contributor who has helped shape this project.
+Be kind to each other.
