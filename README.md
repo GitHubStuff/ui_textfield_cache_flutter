@@ -1,49 +1,70 @@
-# SETUP
+# Flutter Caching and Sorting UI Project
 
-- Find/Replace `ui_textfield_cache_flutter` to name of the name of the package (ex: `flutter_rocks`)
-- Addess the *TODO:* in the **/example** folder by adding code from the package
-- If needed/wanted follow the instructions in the **/example/README.md** to have the example app more reflective of your package and show off features of widget packages.
+## Overview
 
-<!--
-The comments below are from the Flutter/Dart package generation. Feel free to use or ignore
--->
-
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This Flutter project provides a robust solution for caching user input and dynamically sorting cached entries based on user interaction. Utilizing a combination of Hive for local storage and a custom implementation for state management with Flutter Bloc, the project aims to enhance user experience by offering an efficient way to handle and reuse user input.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Caching User Input:** Leverages Hive, a lightweight and efficient local storage solution, to cache user inputs directly on the device.
+- **Dynamic Input Sorting:** Implements custom sorting logic within the Cubit to reorder cached entries based on user search queries, improving the relevance of suggestions.
+- **UI Components:** Offers a responsive UI with a focus on accessibility, including a TextField for input and a ListView for displaying cached entries.
+- **Dark Mode Support:** Automatically adjusts UI elements to match the system's theme, providing a seamless experience in both light and dark modes.
 
-## Getting started
+## Getting Started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Installation
+
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/your-repository/flutter-caching-sorting-ui.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd flutter-caching-sorting-ui
+   ```
+
+3. Get the dependencies:
+   ```bash
+   flutter pub get
+   ```
+
+4. Run the project:
+   ```bash
+   flutter run
+   ```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+- Launch the app on your device or emulator.
+- Enter text into the provided input field. Submitted entries will be cached locally.
+- As you type in the input field, the list of cached entries dynamically sorts based on the relevance to your current input.
+- Select any cached entry from the list to auto-fill the input field.
 
-```dart
-const like = 'sample';
-```
+## Dependencies
 
-## Additional information
+- **hive_flutter**: For local storage and caching mechanism.
+- **flutter_bloc**: For managing the app's state in a reactive way.
+- **flutter_modular**: For dependency injection and modularization of the app.
+- **ui_marquee_flutter**: To display scrolling text in UI elements.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Acknowledgments
+
+- Flutter Team for providing an excellent framework for mobile development.
+- The Hive community for their efficient local storage solution.
+- And every contributor who has helped shape this project.
