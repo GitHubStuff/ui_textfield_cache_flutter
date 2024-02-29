@@ -1,10 +1,9 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:ui_textfield_cache_flutter/ui_textfield_cache_flutter.dart';
 
 import '../gen/assets.gen.dart';
-
-import 'package:ui_textfield_cache_flutter/ui_textfield_cache_flutter.dart';
 
 class HomeScaffold extends StatelessWidget {
   const HomeScaffold({super.key});
@@ -18,17 +17,18 @@ class HomeScaffold extends StatelessWidget {
   }
 
   Widget homeWidget(BuildContext context) {
-    //TODO: Replace with your own code
-    // ignore: non_constant_identifier_names
-    final PackageTemplate ui_textfield_cache_flutter = PackageTemplate();
-    debugPrint('$ui_textfield_cache_flutter');
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          UITextFieldCache(
+            callback: (String? text) {
+              debugPrint('callback: $text');
+            },
+          ),
           SizedBox(
-            width: 200,
-            height: 200,
+            width: 50,
+            height: 50,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Assets.images.ltmm1024x1024.image(),

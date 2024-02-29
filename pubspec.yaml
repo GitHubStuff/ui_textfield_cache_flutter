@@ -11,6 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.4 # A Flutter package that helps implement the BLoC (Business Logic Component) design pattern.
+  flutter_modular: ^6.3.2 # Smart project structure with dependency injection and route management
+  hive_flutter: ^1.1.0 # A lightweight and blazing fast key-value database.
+  nosql_dart:
+    git: https://github.com/GitHubStuff/nosql_dart.git
   ui_extensions_flutter:
     git: https://github.com/GitHubStuff/ui_extensions_flutter.git
 
