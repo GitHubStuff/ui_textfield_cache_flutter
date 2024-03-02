@@ -36,8 +36,10 @@ class UITextFieldCubit extends Cubit<List<String>> {
   /// If the item is not already in the list, it is inserted at the beginning.
   /// The updated list is then persisted to the store before updating the state.
   Future<void> addItem(String item) async {
+    final bool notEmpty = item.trim().isNotEmpty;
     final List<String> updatedList = List.from(state);
-    if (!updatedList.contains(item)) {
+    if (notEmpty) {
+      updatedList.remove(item);
       updatedList.insert(0, item);
     }
     await store.saveStrings(updatedList);
@@ -51,6 +53,10 @@ class UITextFieldCubit extends Cubit<List<String>> {
   /// Items that better match the search criteria are moved to the beginning of the list.
   void newSort(String search) {
     final List<String> updatedList = List.from(state);
+    if (search.trim().isEmpty) {
+      emit(updatedList); // No search term, so no sorting is needed.
+      return;
+    }
     final String searchLower = search.toLowerCase();
     final List<String> searchWords = searchLower.split(' ');
     final String firstSearchWord = searchWords.first;

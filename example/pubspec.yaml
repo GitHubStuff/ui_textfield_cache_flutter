@@ -14,6 +14,7 @@ dependencies:
     sdk: flutter
   ##app_settings: ^5.1.1 # A Flutter plugin for opening iOS and Android phone settings from an app.
   ##cupertino_icons: ^1.0.6 # This is an asset repo for Cupertino widgets.
+  flutter_bloc: ^8.1.3 # A predictable state management library that helps implement the BLoC design pattern
   flutter_modular: ^6.3.2 # Smart project structure with dependency injection and route management
   hive_flutter: ^1.1.0 # A lightweight and blazing fast key-value database.
   nosql_dart:
@@ -22,6 +23,8 @@ dependencies:
     git: https://github.com/GitHubStuff/ui_extensions_flutter.git
   ui_textfield_cache_flutter:
     path: ../../ui_textfield_cache_flutter
+  ui_theme_mode_flutter:
+    git: https://github.com/GitHubStuff/ui_theme_mode_flutter.git
 
 # dart run build_runner build -d
 dev_dependencies:

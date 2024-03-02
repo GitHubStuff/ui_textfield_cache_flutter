@@ -5,6 +5,15 @@ import 'package:ui_marquee_flutter/ui_marguee_flutter.dart';
 
 import '../ui_textfield_cache_flutter.dart';
 
+const Color _kDarkModeBgColor = Colors.deepPurple;
+const Color _kDarkModeEvenColor = Color(0xFF404040);
+const Color _kDarkModeOddColor = Color(0xFF303030);
+const Color _kDarkModeTextColor = Colors.yellow;
+const Color _kLightModeBgColor = Color(0xFFB3E5FC);
+const Color _kLightModeEvenColor = Color(0xffeeeeee);
+const Color _kLightModeOddColor = Color(0xffe0e0e0);
+const Color _kLightModeTextColor = Colors.black;
+
 /// A stateful widget that provides a text input field with caching capabilities.
 ///
 /// This widget integrates with a caching mechanism to store and display a list
@@ -12,26 +21,26 @@ import '../ui_textfield_cache_flutter.dart';
 /// by offering quick access to recent entries and facilitating easy selection.
 /// The widget uses a [UITextFieldCubit] for state management to handle the
 /// addition, display, and sorting of cached strings.
-class UITextFieldCache extends StatefulWidget {
+class UICachedTextField extends StatefulWidget {
   /// A callback function that is invoked with the selected or entered text.
   ///
   /// This function is called when the user accepts the input value, allowing
   /// the parent widget to receive and process the selected or newly entered text.
   final Function(String?) callback;
 
-  /// Constructs an instance of [UITextFieldCache].
+  /// Constructs an instance of [UICachedTextField].
   ///
   /// Requires a [callback] function to handle the user's text input or selection.
-  const UITextFieldCache({
+  const UICachedTextField({
     super.key,
     required this.callback,
   });
 
   @override
-  State<UITextFieldCache> createState() => _UITextFieldCache();
+  State<UICachedTextField> createState() => _UICachedTextField();
 }
 
-class _UITextFieldCache extends State<UITextFieldCache> {
+class _UICachedTextField extends State<UICachedTextField> {
   // Focus node to manage keyboard focus for the text input field.
   final FocusNode focusNode = FocusNode();
   // Controller for the text input field to manage text entry and updates.
@@ -59,9 +68,9 @@ class _UITextFieldCache extends State<UITextFieldCache> {
   @override
   Widget build(BuildContext context) {
     // Determine if dark mode is enabled based on the theme context.
-    isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    isDarkMode = (Theme.of(context).brightness == Brightness.dark);
     return Column(children: [
-      const SizedBox(height: 75),
+      const SizedBox(height: 15),
       textInput(),
       cacheList(),
       buildButtons(),
@@ -87,13 +96,13 @@ class _UITextFieldCache extends State<UITextFieldCache> {
       backgroundColor: MaterialStateProperty.resolveWith<Color>(
         (Set<MaterialState> states) {
           // Choose color based on the theme.
-          return (isDarkMode) ? Colors.deepPurple : Colors.blue;
+          return (isDarkMode) ? _kDarkModeBgColor : _kLightModeBgColor;
         },
       ),
       foregroundColor: MaterialStateProperty.resolveWith<Color>(
         (Set<MaterialState> states) {
           // Choose text color based on the theme.
-          return (isDarkMode) ? Colors.yellow[200]! : Colors.white;
+          return (isDarkMode) ? _kDarkModeTextColor : _kLightModeTextColor;
         },
       ),
     );
@@ -146,13 +155,11 @@ class _UITextFieldCache extends State<UITextFieldCache> {
                 // Determine the background and text color based on the index and theme.
                 Color backgroundColor = (index % 2 == 0)
                     ? (isDarkMode
-                        ? Colors.grey[800]!
-                        : Colors.grey[200]!) // Even items
+                        ? _kDarkModeEvenColor
+                        : _kLightModeEvenColor) // Even items
                     : (isDarkMode
-                        ? Colors.grey[700]!
-                        : Colors.grey[300]!); // Odd items
-                Color textColor =
-                    isDarkMode ? Colors.yellow[200]! : Colors.black;
+                        ? _kDarkModeOddColor
+                        : _kLightModeOddColor); // Odd items
                 // Each entry in the list.
                 return InkWell(
                   onTap: () {
@@ -168,9 +175,8 @@ class _UITextFieldCache extends State<UITextFieldCache> {
                     // Marquee widget for scrolling long text entries.
                     child: UIMarqueeWidget(
                       message: state[index].replaceAll('\n', ' '),
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: textColor,
                       ),
                     ),
                   ),
@@ -208,12 +214,19 @@ class _UITextFieldCache extends State<UITextFieldCache> {
   /// and decorative elements like borders and labels.
   Widget textInput() {
     return TextField(
+      style: const TextStyle(
+          //color: isDarkMode ? _kDarkModeListViewText : _kLightModeListViewText,
+          ),
       maxLines: 4,
       controller: controller,
       focusNode: focusNode,
       decoration: const InputDecoration(
+        //filled: true,
+        //fillColor: isDarkMode ? Colors.black87 : Colors.white,
         border: OutlineInputBorder(),
         labelText: 'Enter text',
+        //labelStyle:
+        //TextStyle(color: isDarkMode ? _kDarkModePrompt : _kLightModePrompt),
       ),
     );
   }

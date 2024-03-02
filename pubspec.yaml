@@ -1,6 +1,6 @@
 name: ui_textfield_cache_flutter
 description: "Text field with cached items."
-version: 0.0.1+2
+version: 0.0.2+0
 home_page: http://www.icodeforyou.com
 publish_to: none # Remove this line if you wish to publish to pub.dev
 
@@ -20,6 +20,8 @@ dependencies:
     git: https://github.com/GitHubStuff/ui_extensions_flutter.git
   ui_marquee_flutter:
     git: https://github.com/GitHubStuff/ui_marquee_flutter.git
+  ui_positioned_overlay_flutter:
+    git: https://github.com/GitHubStuff/ui_positioned_overlay_flutter.git
 
 dev_dependencies:
   flutter_test:
